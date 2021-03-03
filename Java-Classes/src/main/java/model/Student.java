@@ -14,9 +14,6 @@ public class Student implements Serializable {
     String course;
     String group;
 
-    public Student() {
-    }
-
     public Student(int id, String firstName, String lastName, String patronymic, String birthDate, String address, String phoneNumber, String faculty, String course, String group) {
         this.id = id;
         this.firstName = firstName;
@@ -38,10 +35,6 @@ public class Student implements Serializable {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getFirstName() {
