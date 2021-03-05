@@ -21,29 +21,31 @@ public class CodeExecution {
         studentSearch(students, input);
     }
 
-    public static String searchByName(Student[] students, String name) {
+    public static Student searchByName(Student[] students, String name) {
+        Student wrongStudent = new Student(0, "FirstName", "SecondName");
         for (Student studentInfo : students) {
             if (studentInfo.firstName.equals(name)) {
-                return studentInfo.toString();
+                return studentInfo;
             }
         }
-        return "no";
+        return wrongStudent;
     }
 
-    public static String searchByFaculty(Student[] students, String faculty) {
+    public static Student searchByFaculty(Student[] students, String faculty) {
+        Student wrongFaculty = new Student(0, "FistName", "SecondName");
         for (Student facultyName : students) {
             if (facultyName.getFaculty().equals(faculty)) {
-                return facultyName.toString();
+                return facultyName;
             }
         }
-        return "no";
+        return wrongFaculty;
     }
 
     public static void studentSearch(Student[] students, String input) {
-        if (!searchByName(students, input).equals("no")) {
+        if (searchByName(students, input).id != 0) {
             System.out.println("Here is " + input + "'s full info:");
             System.out.println(searchByName(students, input));
-        } else if (!searchByFaculty(students, input).equals("no")) {
+        } else if (searchByFaculty(students, input).id != 0) {
             System.out.println("Students that study " + input + ":");
             System.out.println(searchByFaculty(students, input));
         } else {
